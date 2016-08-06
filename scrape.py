@@ -6,8 +6,6 @@ import re
 from datetime import datetime
 import json
 
-
-
 def download(url):
     print('Downloading: ' + url)
     r = requests.get(url)
@@ -18,8 +16,6 @@ def download(url):
         return r.content
     else:
         return None
-
-
 
 def write_to_excel(workbook,worksheet,storeList):
         
@@ -135,21 +131,12 @@ def scrap(url):
 url = '/store-locator/state-result?lnk=statelisting_stateresult&stateCode=CA&stateName=California'
 store_list = scrap(url)
 
-
-
-
-
 # #####             Writing To Excel Sheet    #####
 
 workbook = xlsxwriter.Workbook('example.xlsx')
 worksheet = workbook.add_worksheet('Store List')
 write_to_excel(workbook,worksheet,store_list)
 workbook.close()
-
-
-
-
-
 
 
 
